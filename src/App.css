@@ -1,0 +1,37 @@
+/* App.css */
+.app-container {
+  @apply min-h-screen bg-gray-100 py-6 flex flex-col justify-center;
+}
+
+.page-container {
+  @apply relative py-3 sm:max-w-xl md:max-w-4xl lg:max-w-7xl sm:mx-auto;
+}
+
+.content-card {
+  @apply relative px-4 py-10 bg-white shadow-lg sm:rounded-3xl sm:p-20;
+}
+
+.control-panel {
+  @apply flex flex-wrap gap-4 mb-6;
+}
+
+.date-input {
+  @apply block w-48 rounded-md border-gray-300 shadow-sm
+  focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500;
+}
+
+.loading-container {
+  @apply flex items-center;
+}
+
+.loading-spinner {
+  @apply animate-spin h-5 w-5 mr-2;
+}
+
+.tables-container {
+  @apply space-y-8;
+}
+
+.error-alert {
+  @apply p-4 bg-red-50 border border-red-200 rounded-md text-red-600;
+}
