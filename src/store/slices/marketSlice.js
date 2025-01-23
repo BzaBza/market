@@ -1,5 +1,4 @@
-// store/slices/marketSlice.js
-import { createAsyncThunk } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { fetchMarketData } from '../../services/api.service';
 
 export const getMarketData = createAsyncThunk(
