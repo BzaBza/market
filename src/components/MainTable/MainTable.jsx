@@ -1,14 +1,15 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
-import SelectedTableRow from './SelectedTableRow';
+import { useDispatch, useSelector } from 'react-redux';
+import { addSelectedItem } from '../../store/slices/selectedItemsSlice';
+import MainTableRow from './MainTableRow';
+const MainTable = () => {
+    const { data, loading, selectedLocations } = useSelector(state => state.market);
+    const dispatch = useDispatch();
 
-const SelectedTable = () => {
-    const { items } = useSelector(state => state.selectedItems);
-    const { selectedLocations } = useSelector(state => state.market);
+    if (loading) return <div>Loading...</div>;
 
     return (
-        <div className="w-full overflow-x-auto mt-8">
-            <h2 className="text-lg font-semibold mb-4">Selected Items</h2>
+        <div className="w-full overflow-x-auto">
             <table className="min-w-full divide-y divide-gray-200">
                 <thead>
                 <tr>
@@ -20,8 +21,8 @@ const SelectedTable = () => {
                 </tr>
                 </thead>
                 <tbody className="bg-white divide-y divide-gray-200">
-                {items.map(item => (
-                    <SelectedTableRow key={item.id} item={item} />
+                {data.map(item => (
+                    <MainTableRow key={item.id} item={item} onSelect={() => dispatch(addSelectedItem(item))} />
                 ))}
                 </tbody>
             </table>
@@ -29,4 +30,4 @@ const SelectedTable = () => {
     );
 };
 
-export default SelectedTable;
+export default MainTable;

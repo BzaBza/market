@@ -36,3 +36,5 @@ const SelectedTableRow = ({ item }) => {
         </tr>
     );
 };
+
+export default SelectedTableRow;

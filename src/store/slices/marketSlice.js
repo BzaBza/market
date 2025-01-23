@@ -38,3 +38,5 @@ const marketSlice = createSlice({
     }
 });
 
+export const { setLocations } = marketSlice.actions;
+export default marketSlice.reducer;
